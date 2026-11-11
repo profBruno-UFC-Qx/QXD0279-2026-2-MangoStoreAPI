@@ -1,0 +1,29 @@
+<a class="button" href="/mangas/new" aria-label="Adicionar manga">➕</a>
+<table>
+  <caption>Todos os mangas cadastrados</caption>
+  <thead>
+    <tr>
+      <th>#</th>
+      <th>Título</th>
+      <th>Volume</th>
+      <th>Preço</th>
+      <th>Ações</th>
+    </tr>
+  </thead>
+  <tbody>
+    {{#each mangas}}
+    <tr>
+      <td>{{ id }}</td>
+      <td>{{ title }}</td>
+      <td>{{ number }}</td>
+      <td>{{ price }}</td>
+      <td>
+        <a class="button" href="/mangas/{{id}}/edit" aria-label="Editar manga">✏️</a>
+        <form action="/mangas/{{id}}/delete" method="post" style="display: inline">
+          <button type="submit" aria-label="Remover manga">🗑️</button>
+        </form>
+      </td>
+    </tr>
+    {{/each}}
+  </tbody>
+</table>
